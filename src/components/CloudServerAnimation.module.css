@@ -1,0 +1,31 @@
+.cloudAnimation {
+  opacity: 0.9;
+  pointer-events: none;
+  animation: float 8s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Subtle floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cloudAnimation {
+    transform: scale(0.6); /* Scale down more since base is now much larger (750px) */
+  }
+}
+
+@media (max-width: 480px) {
+  .cloudAnimation {
+    transform: scale(0.4); /* Scale down significantly for mobile since base is huge */
+  }
+}

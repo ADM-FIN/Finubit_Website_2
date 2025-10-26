@@ -1,0 +1,402 @@
+.header {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  height: 100px;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+  backdrop-filter: blur(40px);
+  background: rgba(255, 255, 255, 0.015);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.left, .center, .right {
+  flex: 1;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  font-family: var(--font-space);
+  font-weight: 600;
+  font-size: 28px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.logoImage {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-manrope);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: none;
+  transition: opacity 0.3s ease;
+}
+
+.menuText {
+  letter-spacing: 0.5px;
+}
+
+.menuIcon {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.menuIcon span {
+  width: 16px;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.menuOpen .menuIcon span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.menuOpen .menuIcon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuOpen .menuIcon span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, #C7FFD8 0%, #98DED9 100%);
+  color: #000000;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  font-family: var(--font-jakarta);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: none;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 16px rgba(199, 255, 216, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.mobileNav {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  overflow: visible;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navList {
+  list-style: none;
+  padding: 24px 0;
+  margin: 0;
+  text-align: center;
+}
+
+.navList li {
+  margin: 12px 0;
+}
+
+.navList a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.navList a:hover {
+  color: #98DED9;
+  text-shadow: 0 2px 12px rgba(152, 222, 217, 0.4);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.productsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-manrope);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.productsButton:hover {
+  color: #98DED9;
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-manrope);
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.navLink:hover {
+  color: #98DED9;
+}
+
+.desktopProductsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px 0;
+  margin-top: 8px;
+  min-width: 200px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(152, 222, 217, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.desktopProductsDropdown::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.desktopProductsDropdown a {
+  display: block;
+  padding: 10px 16px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin: 0 8px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.desktopProductsDropdown a:hover {
+  background: rgba(152, 222, 217, 0.1);
+  color: #98DED9;
+  box-shadow:
+    0 2px 8px rgba(152, 222, 217, 0.2),
+    inset 0 1px 0 rgba(152, 222, 217, 0.2);
+}
+
+/* Show desktop nav on larger screens */
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .menuButton {
+    display: none;
+  }
+}
+
+/* Mobile Navigation Products Section */
+.productsSection {
+  margin: 16px 0;
+  position: relative;
+}
+
+.productsSectionTitle {
+  color: #98DED9;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.productsSectionTitle:hover {
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
+}
+
+.dropdownArrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.rotated {
+  transform: rotate(90deg);
+}
+
+.productsDropdown {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px 0;
+  margin-left: 16px;
+  min-width: 220px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(152, 222, 217, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.productsDropdown::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.productsDropdown a {
+  display: block;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  margin: 0 8px;
+  white-space: nowrap;
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.productsDropdown a:hover {
+  background: rgba(152, 222, 217, 0.1);
+  color: #98DED9;
+  box-shadow:
+    0 2px 8px rgba(152, 222, 217, 0.2),
+    inset 0 1px 0 rgba(152, 222, 217, 0.2);
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  .mobileNav {
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .productsDropdown {
+    min-width: 240px;
+    padding: 24px 0;
+  }
+
+  .productsDropdown a {
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .navList a {
+    font-size: 20px;
+  }
+}

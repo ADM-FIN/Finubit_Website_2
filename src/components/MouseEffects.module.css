@@ -1,0 +1,32 @@
+.cursor {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #00D084;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.trailContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.trailPoint {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, rgba(0,208,132,0.3) 0%, rgba(0,208,132,0.1) 50%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.8s ease-out;
+}

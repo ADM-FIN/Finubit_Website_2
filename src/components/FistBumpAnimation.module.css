@@ -1,0 +1,31 @@
+.fistBumpAnimation {
+  opacity: 0.95;
+  pointer-events: none;
+  animation: gentleFloat 6s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Gentle floating animation for fist bump */
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .fistBumpAnimation {
+    transform: scale(0.7); /* Scale down for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .fistBumpAnimation {
+    transform: scale(0.5); /* Scale down for mobile */
+  }
+}

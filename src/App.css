@@ -1,0 +1,31 @@
+/* Global Styles */
+.App {
+  position: relative;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Hide default scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+/* Mobile cursor override */
+@media (pointer: coarse) {
+  .App {
+    cursor: auto;
+  }
+}
+

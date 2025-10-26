@@ -1,0 +1,93 @@
+.progressContainer {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.progressTrack {
+  width: 4px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.progressFill {
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    #98DED9 0%,
+    #C7FFD8 100%
+  );
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow:
+    0 0 8px rgba(152, 222, 217, 0.4),
+    0 0 16px rgba(199, 255, 216, 0.2);
+  transition: height 0.1s ease-out;
+}
+
+.progressText {
+  font-family: var(--font-inter);
+  font-size: 12px;
+  font-weight: 600;
+  color: #98DED9;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(152, 222, 217, 0.2);
+  border-radius: 12px;
+  padding: 4px 8px;
+  text-shadow: 0 0 4px rgba(152, 222, 217, 0.3);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  min-width: 36px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .progressContainer {
+    right: 16px;
+  }
+
+  .progressTrack {
+    height: 150px;
+    width: 3px;
+  }
+
+  .progressText {
+    font-size: 11px;
+    padding: 3px 6px;
+    min-width: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .progressContainer {
+    right: 12px;
+  }
+
+  .progressTrack {
+    height: 120px;
+  }
+
+  .progressText {
+    font-size: 10px;
+    padding: 2px 5px;
+    min-width: 28px;
+  }
+}

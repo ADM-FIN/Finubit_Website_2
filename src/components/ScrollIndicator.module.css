@@ -1,0 +1,71 @@
+.scrollIndicator {
+  position: fixed;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.scrollArrow {
+  background: rgba(152, 222, 217, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(152, 222, 217, 0.4);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  color: rgba(152, 222, 217, 0.9);
+}
+
+.scrollArrow svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+/* Show only in hero section */
+.scrollIndicator.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .scrollIndicator {
+    bottom: 32px;
+  }
+
+  .scrollArrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .scrollArrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollIndicator {
+    bottom: 24px;
+  }
+
+  .scrollArrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .scrollArrow svg {
+    width: 16px;
+    height: 16px;
+  }
+}

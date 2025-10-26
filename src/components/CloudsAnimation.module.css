@@ -1,0 +1,41 @@
+.cloudsAnimation {
+  position: absolute;
+  top: 50%;
+  left: 0; /* Align to left edge */
+  transform: translateY(-50%); /* Only center vertically */
+  z-index: 2; /* Under "Next Generation" (z-index: 3) but above "Core Banking" (z-index: 3) */
+  opacity: 0.7; /* Slightly more transparent since it's bigger */
+  pointer-events: none;
+  animation: slowFloat 15s ease-in-out infinite;
+
+  /* Improve rendering quality */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Very slow floating animation for clouds */
+@keyframes slowFloat {
+  0%, 100% {
+    transform: translateY(-50%) translateZ(0);
+  }
+  50% {
+    transform: translateY(calc(-50% - 8px)) translateZ(0); /* Floating effect */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cloudsAnimation {
+    opacity: 0.6; /* More transparent on smaller screens since it covers more */
+  }
+}
+
+@media (max-width: 480px) {
+  .cloudsAnimation {
+    opacity: 0.5; /* Even more transparent on mobile */
+    height: 50vh; /* Slightly smaller height on mobile */
+  }
+}
