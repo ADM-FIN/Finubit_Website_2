@@ -4,9 +4,12 @@
   left: 0; /* Align to left edge */
   transform: translateY(-50%); /* Only center vertically */
   z-index: 2; /* Under "Next Generation" (z-index: 3) but above "Core Banking" (z-index: 3) */
-  opacity: 0.7; /* Slightly more transparent since it's bigger */
+  opacity: 0.15; /* Even more transparent for distant atmospheric effect */
   pointer-events: none;
   animation: slowFloat 15s ease-in-out infinite;
+
+  /* Dark blue/light blue color transformation from mint with heavy atmospheric blur */
+  filter: hue-rotate(90deg) saturate(1.2) brightness(0.8) contrast(1.1) blur(12px);
 
   /* Improve rendering quality */
   backface-visibility: hidden;
@@ -29,13 +32,13 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .cloudsAnimation {
-    opacity: 0.6; /* More transparent on smaller screens since it covers more */
+    opacity: 0.12; /* More transparent on smaller screens since it covers more */
   }
 }
 
 @media (max-width: 480px) {
   .cloudsAnimation {
-    opacity: 0.5; /* Even more transparent on mobile */
+    opacity: 0.08; /* Even more transparent on mobile for subtle atmosphere */
     height: 50vh; /* Slightly smaller height on mobile */
   }
 }

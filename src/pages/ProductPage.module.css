@@ -220,6 +220,115 @@
   margin: 0;
 }
 
+/* White Background Variant */
+.whiteBackground {
+  background: #ffffff;
+  color: #000000;
+}
+
+.whiteBackground .productCategory {
+  color: #007BFF;
+}
+
+.whiteBackground .productTitle {
+  color: #000000;
+  background: linear-gradient(135deg, #000000 0%, #007BFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.whiteBackground .productSubtitle {
+  color: #007BFF;
+}
+
+.whiteBackground .productDescription {
+  color: #333333;
+}
+
+.whiteBackground .section {
+  border-top: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.whiteBackground .section:nth-child(even) {
+  background: #f8f9fa;
+  color: #000000;
+}
+
+.whiteBackground .sectionTitle {
+  color: #000000;
+  background: linear-gradient(135deg, #000000 0%, #007BFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.whiteBackground .sectionSubtitle {
+  color: #007BFF;
+}
+
+.whiteBackground .sectionText {
+  color: #333333;
+}
+
+.whiteBackground .featureCard {
+  background: rgba(0, 123, 255, 0.05);
+  border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.whiteBackground .featureCard:hover {
+  background: rgba(0, 123, 255, 0.08);
+  border-color: rgba(0, 123, 255, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 123, 255, 0.1);
+}
+
+.whiteBackground .featureCard h4 {
+  color: #000000;
+}
+
+.whiteBackground .featureCard p {
+  color: #666666;
+}
+
+.whiteBackground .benefitItem {
+  background: rgba(0, 123, 255, 0.05);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+.whiteBackground .benefitItem:hover {
+  background: rgba(0, 123, 255, 0.08);
+  border-color: rgba(0, 123, 255, 0.2);
+}
+
+.whiteBackground .benefitNumber {
+  color: #007BFF;
+}
+
+.whiteBackground .benefitItem h4 {
+  color: #000000;
+}
+
+.whiteBackground .benefitItem p {
+  color: #666666;
+}
+
+/* Image Container Styles */
+.imageContainer {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.sectionImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.whiteBackground .sectionImage {
+  box-shadow: 0 8px 32px rgba(0, 123, 255, 0.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .productPage {

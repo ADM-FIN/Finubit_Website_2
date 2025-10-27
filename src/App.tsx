@@ -3,7 +3,6 @@ import { Header } from './components/Header'
 import { ModernMouseEffects } from './components/ModernMouseEffects'
 import { Footer } from './components/Footer'
 import { ScrollProgressBar } from './components/ScrollProgressBar'
-import { ScrollIndicator } from './components/ScrollIndicator'
 import { useScrollEffects } from './hooks/useScrollEffects'
 
 // Pages
@@ -31,7 +30,6 @@ function AppContent() {
       {showScrollComponents && (
         <>
           <ScrollProgressBar />
-          <ScrollIndicator />
         </>
       )}
       <Header />

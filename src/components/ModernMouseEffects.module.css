@@ -15,8 +15,8 @@
 /* Blue Eclipse Follower */
 .eclipseFollower {
   position: fixed;
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 800px;
   background-image: url('/ellipse--blue-9025f28a.webp');
   background-size: contain;
   background-repeat: no-repeat;

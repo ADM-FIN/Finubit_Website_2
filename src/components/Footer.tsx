@@ -1,16 +1,22 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import styles from './Footer.module.css'
 
 export const Footer: React.FC = () => {
+  const location = useLocation()
+  const isHomePage = location.pathname === '/'
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* Main Statement */}
-        <div className={styles.mainSection}>
-          <h1 className={styles.statement}>
-            Your bank is probably old
-          </h1>
-        </div>
+        {/* Main Statement - Only on Home Page */}
+        {isHomePage && (
+          <div className={styles.mainSection}>
+            <h1 className={styles.statement}>
+              Your bank is probably old
+            </h1>
+          </div>
+        )}
 
         {/* Footer Content */}
         <div className={styles.footerContent}>

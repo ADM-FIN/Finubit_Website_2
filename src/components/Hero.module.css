@@ -19,123 +19,11 @@
   background-color: #000000;
 }
 
-/* Money Deposit Animation */
-.moneyContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50vh; /* Only cover upper 50% of hero */
-  z-index: 2; /* Above extended background, below text content */
-  pointer-events: none;
-  overflow: hidden;
-}
 
-.money1, .money2, .money3, .money4, .money5, .money6 {
-  position: absolute;
-  font-family: var(--font-inter);
-  font-weight: 600;
-  font-size: 24px;
-  color: #98DED9;
-  opacity: 0;
-  text-shadow: 0 0 10px rgba(152, 222, 217, 0.3);
-}
-
-.money1 {
-  left: 10%;
-  animation: moneyDrop1 8s ease-in-out infinite;
-  animation-delay: 0s;
-}
-
-.money2 {
-  left: 25%;
-  animation: moneyDrop2 10s ease-in-out infinite;
-  animation-delay: 2s;
-  color: #C7FFD8;
-  text-shadow: 0 0 10px rgba(199, 255, 216, 0.3);
-}
-
-.money3 {
-  left: 40%;
-  animation: moneyDrop3 12s ease-in-out infinite;
-  animation-delay: 4s;
-  font-size: 20px;
-}
-
-.money4 {
-  left: 60%;
-  animation: moneyDrop4 9s ease-in-out infinite;
-  animation-delay: 1s;
-  color: #C7FFD8;
-  text-shadow: 0 0 10px rgba(199, 255, 216, 0.3);
-}
-
-.money5 {
-  left: 75%;
-  animation: moneyDrop5 11s ease-in-out infinite;
-  animation-delay: 5s;
-  font-size: 22px;
-}
-
-.money6 {
-  left: 85%;
-  animation: moneyDrop6 7s ease-in-out infinite;
-  animation-delay: 3s;
-  color: #C7FFD8;
-  text-shadow: 0 0 10px rgba(199, 255, 216, 0.3);
-}
-
-@keyframes moneyDrop1 {
-  0% { top: -5%; opacity: 0; transform: translateX(0) rotate(0deg); }
-  10% { opacity: 0.6; }
-  50% { top: 25%; opacity: 0.8; transform: translateX(10px) rotate(15deg); }
-  90% { opacity: 0.3; }
-  100% { top: 50%; opacity: 0; transform: translateX(-5px) rotate(30deg); }
-}
-
-@keyframes moneyDrop2 {
-  0% { top: -5%; opacity: 0; transform: translateX(0) rotate(0deg); }
-  15% { opacity: 0.7; }
-  50% { top: 30%; opacity: 0.9; transform: translateX(-8px) rotate(-12deg); }
-  85% { opacity: 0.4; }
-  100% { top: 50%; opacity: 0; transform: translateX(12px) rotate(-25deg); }
-}
-
-@keyframes moneyDrop3 {
-  0% { top: -5%; opacity: 0; transform: translateX(0) rotate(0deg); }
-  12% { opacity: 0.5; }
-  50% { top: 28%; opacity: 0.7; transform: translateX(6px) rotate(20deg); }
-  88% { opacity: 0.2; }
-  100% { top: 50%; opacity: 0; transform: translateX(-10px) rotate(40deg); }
-}
-
-@keyframes moneyDrop4 {
-  0% { top: -5%; opacity: 0; transform: translateX(0) rotate(0deg); }
-  8% { opacity: 0.6; }
-  50% { top: 32%; opacity: 0.8; transform: translateX(-12px) rotate(-18deg); }
-  92% { opacity: 0.3; }
-  100% { top: 50%; opacity: 0; transform: translateX(8px) rotate(-35deg); }
-}
-
-@keyframes moneyDrop5 {
-  0% { top: -5%; opacity: 0; transform: translateX(0) rotate(0deg); }
-  18% { opacity: 0.4; }
-  50% { top: 26%; opacity: 0.6; transform: translateX(15px) rotate(25deg); }
-  82% { opacity: 0.2; }
-  100% { top: 50%; opacity: 0; transform: translateX(-8px) rotate(50deg); }
-}
-
-@keyframes moneyDrop6 {
-  0% { top: -5%; opacity: 0; transform: translateX(0) rotate(0deg); }
-  20% { opacity: 0.7; }
-  50% { top: 35%; opacity: 0.9; transform: translateX(-6px) rotate(-10deg); }
-  80% { opacity: 0.4; }
-  100% { top: 50%; opacity: 0; transform: translateX(10px) rotate(-20deg); }
-}
 
 .container {
   position: relative;
-  z-index: 3; /* Above extended background and money animations */
+  z-index: 3; /* Above extended background */
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 24px;
@@ -158,7 +46,7 @@
   font-family: var(--font-jakarta);
   font-size: 16px;
   font-weight: 500;
-  color: var(--accent-teal);
+  color: #00BFFF;
   opacity: 0.9;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -183,11 +71,12 @@
   font-family: var(--font-space);
   font-size: 150px; /* 2.5x bigger than original 60px */
   font-weight: 700;
-  color: #ffffff;
+  color: #89C4E1 !important;
   line-height: 0.9;
   margin: 0;
   letter-spacing: -0.03em;
-  text-shadow: 0 0 30px rgba(152, 222, 217, 0.3);
+  text-shadow: 0 0 20px rgba(137, 196, 225, 0.3);
+  white-space: nowrap; /* Prevent text wrapping to next line */
 }
 
 .topLeftText {
@@ -225,9 +114,9 @@
 
 .ctaGhost {
   background: transparent;
-  color: #98DED9;
+  color: #00BFFF;
   padding: 12px 24px;
-  border: 1px solid #98DED9;
+  border: 1px solid #00BFFF;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -267,6 +156,7 @@
 
   .bigHeadline {
     font-size: 80px; /* Smaller for tablets */
+    white-space: nowrap; /* Keep single line on tablets */
   }
 
   .topLeftText {
@@ -300,6 +190,7 @@
   .bigHeadline {
     font-size: 50px; /* Much smaller for mobile */
     line-height: 1.0;
+    white-space: nowrap; /* Keep single line on mobile */
   }
 
   .topLeftText {
@@ -343,10 +234,10 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
-  background: rgba(152, 222, 217, 0.1);
-  border: 1px solid rgba(152, 222, 217, 0.2);
+  background: rgba(0, 191, 255, 0.1);
+  border: 1px solid rgba(0, 191, 255, 0.2);
   border-radius: 20px;
-  color: var(--accent-teal);
+  color: #00BFFF;
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 500;
@@ -369,10 +260,10 @@
 }
 
 .tag:hover {
-  background: rgba(152, 222, 217, 0.2);
-  border-color: rgba(152, 222, 217, 0.4);
+  background: rgba(0, 191, 255, 0.2);
+  border-color: rgba(0, 191, 255, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(152, 222, 217, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 191, 255, 0.3);
 }
 
 @keyframes tagFloat {

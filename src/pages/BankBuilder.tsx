@@ -3,7 +3,7 @@ import styles from './ProductPage.module.css'
 
 export const BankBuilder: React.FC = () => {
   return (
-    <div className={styles.productPage}>
+    <div className={`${styles.productPage} ${styles.whiteBackground}`}>
       <div className={styles.container}>
         {/* Hero Section */}
         <section className={styles.productHero}>

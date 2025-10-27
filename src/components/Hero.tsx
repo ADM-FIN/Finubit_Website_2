@@ -33,15 +33,6 @@ export const Hero: React.FC = () => {
       {/* Static Background */}
       <div className={styles.background} />
 
-      {/* Money Deposit Animation */}
-      <div className={styles.moneyContainer}>
-        <div className={styles.money1}>$</div>
-        <div className={styles.money2}>$</div>
-        <div className={styles.money3}>€</div>
-        <div className={styles.money4}>$</div>
-        <div className={styles.money5}>¥</div>
-        <div className={styles.money6}>$</div>
-      </div>
 
       {/* Split Text Layout */}
       {/* Next Generation - Top Left */}

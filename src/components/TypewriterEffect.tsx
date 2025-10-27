@@ -56,7 +56,7 @@ const TypewriterEffectComponent: React.FC<TypewriterEffectProps> = ({
 
   return (
     <div className={className}>
-      <span style={{ color: '#00D084' }}>
+      <span style={{ color: '#89C4E1' }}>
         {displayText}
         {showCursor && (
           <motion.span

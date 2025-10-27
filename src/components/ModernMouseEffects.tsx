@@ -114,8 +114,8 @@ export const ModernMouseEffects: React.FC = () => {
       }
 
       if (isInHero) {
-        eclipseX.set(e.clientX - 250)
-        eclipseY.set(e.clientY - 250)
+        eclipseX.set(e.clientX - 400)
+        eclipseY.set(e.clientY - 400)
       }
     }
 
