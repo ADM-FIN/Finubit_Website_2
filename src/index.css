@@ -10,17 +10,19 @@
   line-height: 1.4;
   font-weight: 400;
 
-  color-scheme: dark;
-  color: #ffffff;
-  background-color: #000000;
+  color-scheme: light;
+  color: #161D6F;
+  background-color: #ffffff;
 
-  /* Boss's Color Palette */
-  --primary-bg: #000000;
-  --secondary-bg: #000000;
+  /* Bright Theme Color Palette */
+  --primary-bg: #ffffff;
+  --secondary-bg: #f8f9fa;
+  --primary-dark: #161D6F;
+  --primary-blue: #0B2F9F;
   --accent-teal: #98DED9;
   --accent-green: #C7FFD8;
-  --text-primary: #ffffff;
-  --text-secondary: #98DED9;
+  --text-primary: #161D6F;
+  --text-secondary: #0B2F9F;
 
   /* Modern Font Variables - All using Inter */
   --font-inter: 'Inter', sans-serif;
@@ -36,7 +38,7 @@
 
 html {
   scroll-behavior: auto;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 body {

@@ -16,7 +16,7 @@
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 
@@ -26,7 +26,7 @@
   z-index: 3; /* Above extended background */
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -37,16 +37,19 @@
 .content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1.5rem;
   text-align: center;
-  max-width: 800px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .eyebrow {
   font-family: var(--font-jakarta);
   font-size: 16px;
   font-weight: 500;
-  color: #00BFFF;
+  color: var(--primary-blue);
   opacity: 0.9;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -60,7 +63,7 @@
   font-family: var(--font-space);
   font-size: 60px;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   line-height: 1.1;
   margin: 0;
   letter-spacing: -0.02em;
@@ -71,12 +74,109 @@
   font-family: var(--font-space);
   font-size: 150px; /* 2.5x bigger than original 60px */
   font-weight: 700;
-  color: #89C4E1 !important;
+  color: var(--primary-blue) !important;
   line-height: 0.9;
   margin: 0;
   letter-spacing: -0.03em;
-  text-shadow: 0 0 20px rgba(137, 196, 225, 0.3);
+  text-shadow: 0 0 20px rgba(11, 47, 159, 0.2);
   white-space: nowrap; /* Prevent text wrapping to next line */
+}
+
+/* Centered Text Layout */
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.centeredHeadline {
+  font-family: var(--font-space);
+  font-size: 48px; /* Smaller size */
+  font-weight: 700;
+  background: linear-gradient(45deg, #4169E1 0%, #98DED9 50%, #4169E1 100%); /* Royal blue to mint gradient with blue at end */
+  background-size: 300% 100%; /* Make background larger for animation */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap; /* Keep on one line */
+  animation: gradientShift 60s ease-in-out infinite; /* Very slow animation - 60s (1 minute) */
+}
+
+.subtitle {
+  font-family: var(--font-inter);
+  font-size: 18px;
+  font-weight: 400;
+  color: #666;
+  text-align: center;
+  margin-top: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Trusted By Section */
+.trustedSection {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.trustedContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.trustedText {
+  font-family: var(--font-inter);
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.bankLogo {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Random Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  15% {
+    background-position: 80% 30%;
+  }
+  32% {
+    background-position: 20% 70%;
+  }
+  48% {
+    background-position: 95% 40%;
+  }
+  63% {
+    background-position: 10% 60%;
+  }
+  77% {
+    background-position: 70% 20%;
+  }
+  89% {
+    background-position: 45% 80%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .topLeftText {
@@ -103,8 +203,8 @@
 }
 
 .ctaPrimary {
-  background: #C7FFD8;
-  color: #000000;
+  background: var(--accent-green);
+  color: var(--primary-dark);
   padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
@@ -114,9 +214,9 @@
 
 .ctaGhost {
   background: transparent;
-  color: #00BFFF;
+  color: var(--primary-blue);
   padding: 12px 24px;
-  border: 1px solid #00BFFF;
+  border: 1px solid var(--primary-blue);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -159,6 +259,37 @@
     white-space: nowrap; /* Keep single line on tablets */
   }
 
+  .heroText {
+    gap: 0.25rem;
+  }
+
+  .centeredHeadline {
+    font-size: 36px; /* Smaller for tablets */
+    line-height: 1.2;
+    white-space: nowrap; /* Keep single line on tablets */
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .trustedSection {
+    bottom: 40px;
+  }
+
+  .trustedContent {
+    gap: 10px;
+  }
+
+  .trustedText {
+    font-size: 12px;
+  }
+
+  .bankLogo {
+    height: 20px;
+  }
+
   .topLeftText {
     top: 120px;
     left: 24px;
@@ -172,7 +303,7 @@
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 24px;
   }
 
   .background {
@@ -191,6 +322,37 @@
     font-size: 50px; /* Much smaller for mobile */
     line-height: 1.0;
     white-space: nowrap; /* Keep single line on mobile */
+  }
+
+  .heroText {
+    gap: 0.125rem;
+  }
+
+  .centeredHeadline {
+    font-size: 24px; /* Much smaller for mobile */
+    line-height: 1.2;
+    white-space: nowrap; /* Keep single line on mobile */
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .trustedSection {
+    bottom: 30px;
+  }
+
+  .trustedContent {
+    gap: 8px;
+  }
+
+  .trustedText {
+    font-size: 11px;
+  }
+
+  .bankLogo {
+    height: 18px;
   }
 
   .topLeftText {
@@ -234,10 +396,10 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
-  background: rgba(0, 191, 255, 0.1);
-  border: 1px solid rgba(0, 191, 255, 0.2);
+  background: rgba(11, 47, 159, 0.1);
+  border: 1px solid rgba(11, 47, 159, 0.2);
   border-radius: 20px;
-  color: #00BFFF;
+  color: var(--primary-blue);
   font-family: var(--font-inter);
   font-size: 14px;
   font-weight: 500;
@@ -260,10 +422,10 @@
 }
 
 .tag:hover {
-  background: rgba(0, 191, 255, 0.2);
-  border-color: rgba(0, 191, 255, 0.4);
+  background: rgba(11, 47, 159, 0.2);
+  border-color: rgba(11, 47, 159, 0.4);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 191, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(11, 47, 159, 0.3);
 }
 
 @keyframes tagFloat {
@@ -297,3 +459,4 @@
     padding: 5px 10px;
   }
 }
+

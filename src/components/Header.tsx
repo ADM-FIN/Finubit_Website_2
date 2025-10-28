@@ -18,6 +18,7 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement
@@ -67,21 +68,16 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <div className={styles.left}>
           <Link to="/">
-            <motion.div
-              className={styles.logo}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <div className={styles.logo}>
               <img
                 src={colors.logoSrc}
                 alt="Finubit"
                 className={styles.logoImage}
                 style={{
-                  filter: colors.logoFilter,
-                  transition: 'filter 0.3s ease'
+                  filter: colors.logoFilter
                 }}
               />
-            </motion.div>
+            </div>
           </Link>
         </div>
 
@@ -194,6 +190,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
+
       {/* Mobile Navigation Menu */}
       <motion.nav
         className={styles.mobileNav}
@@ -204,7 +201,7 @@ export const Header: React.FC = () => {
         }}
         transition={{ duration: 0.3 }}
         style={{
-          background: 'rgba(0, 0, 0, 0.25)',
+          background: colors.backgroundColor,
           borderColor: colors.borderColor
         }}
       >

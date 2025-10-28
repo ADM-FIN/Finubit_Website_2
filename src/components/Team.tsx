@@ -92,7 +92,7 @@ export const Team: React.FC = () => {
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
-              className={`${styles.teamCard} ${index === 1 ? styles.teamCardCenter : ''}`}
+              className={styles.teamCard}
               variants={cardVariants}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
@@ -101,24 +101,6 @@ export const Team: React.FC = () => {
               </div>
               <div className={styles.teamCardContent}>
                 <h3>{member.name}</h3>
-                <p className={styles.position}>{member.position}</p>
-                <span className={styles.bio}>{member.bio}</span>
-                <ul className={styles.socialLinks}>
-                  {member.linkedinUrl && (
-                    <li>
-                      <a href={member.linkedinUrl} aria-label={`${member.name} LinkedIn`}>
-                        <i className="fa-brands fa-linkedin-in"></i>
-                      </a>
-                    </li>
-                  )}
-                  {member.twitterUrl && (
-                    <li>
-                      <a href={member.twitterUrl} aria-label={`${member.name} Twitter`}>
-                        <i className="fa-brands fa-x-twitter"></i>
-                      </a>
-                    </li>
-                  )}
-                </ul>
               </div>
             </motion.div>
           ))}

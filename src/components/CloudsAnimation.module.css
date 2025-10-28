@@ -1,15 +1,15 @@
 .cloudsAnimation {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 0; /* Align to left edge */
-  transform: translateY(-50%); /* Only center vertically */
-  z-index: 2; /* Under "Next Generation" (z-index: 3) but above "Core Banking" (z-index: 3) */
-  opacity: 0.15; /* Even more transparent for distant atmospheric effect */
+  transform: translateY(-10%); /* Position higher */
+  z-index: 1; /* Behind header (z-index: 1000) and text (z-index: 3) */
+  opacity: 0.25; /* More visible for bright theme contrast */
   pointer-events: none;
   animation: slowFloat 15s ease-in-out infinite;
 
-  /* Dark blue/light blue color transformation from mint with heavy atmospheric blur */
-  filter: hue-rotate(90deg) saturate(1.2) brightness(0.8) contrast(1.1) blur(12px);
+  /* Bright theme: Darker blue clouds with atmospheric blur for white background */
+  filter: hue-rotate(90deg) saturate(1.8) brightness(0.6) contrast(1.4) blur(12px);
 
   /* Improve rendering quality */
   backface-visibility: hidden;
@@ -22,23 +22,23 @@
 /* Very slow floating animation for clouds */
 @keyframes slowFloat {
   0%, 100% {
-    transform: translateY(-50%) translateZ(0);
+    transform: translateY(-10%) translateZ(0);
   }
   50% {
-    transform: translateY(calc(-50% - 8px)) translateZ(0); /* Floating effect */
+    transform: translateY(calc(-10% - 8px)) translateZ(0); /* Floating effect */
   }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .cloudsAnimation {
-    opacity: 0.12; /* More transparent on smaller screens since it covers more */
+    opacity: 0.20; /* Adjusted for bright theme visibility */
   }
 }
 
 @media (max-width: 480px) {
   .cloudsAnimation {
-    opacity: 0.08; /* Even more transparent on mobile for subtle atmosphere */
+    opacity: 0.15; /* Adjusted for bright theme mobile visibility */
     height: 50vh; /* Slightly smaller height on mobile */
   }
 }

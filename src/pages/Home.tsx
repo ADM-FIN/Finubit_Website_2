@@ -24,8 +24,10 @@ export const Home: React.FC = () => {
         subtitle="Dynamic. Productive. Impactful."
         description="At Finubit, every developer writes code that matters—code that's in production from day one. We move fast, impact early, and believe in hand-in-hand transformation: business and technology evolving together. We're a platform company in a dynamic environment where ideas are implemented, not shelved."
         fontFamily="Inter"
-        backgroundColor="#000000"
-        backgroundImage="/chatgpt_image.png"
+        backgroundColor="#ffffff"
+        backgroundImage="/white_servers_culture.png"
+        backgroundPosition="center 80%"
+        textColor="#000000"
         rightAnimation={<FistBumpAnimation />}
       />
     </>

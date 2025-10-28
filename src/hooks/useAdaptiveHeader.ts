@@ -11,15 +11,15 @@ interface AdaptiveHeaderColors {
 
 export const useAdaptiveHeader = () => {
   const [colors, setColors] = useState<AdaptiveHeaderColors>({
-    textColor: '#ffffff',
-    backgroundColor: 'rgba(255, 255, 255, 0.015)',
-    borderColor: 'rgba(255, 255, 255, 0.05)',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
+    textColor: '#000000',
+    backgroundColor: 'rgba(255, 255, 255, 0.25)',
+    borderColor: 'rgba(255, 255, 255, 0.18)',
+    boxShadow: '0 8px 32px rgba(22, 29, 111, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(22, 29, 111, 0.05)',
     logoSrc: '/logo_transparent_white.png',
-    logoFilter: 'brightness(0) invert(1)' // Make transparent logo white
+    logoFilter: 'brightness(0) invert(0)' // Make transparent logo black
   })
 
-  const [isDarkBackground, setIsDarkBackground] = useState(true)
+  const [isDarkBackground, setIsDarkBackground] = useState(false)
 
   const detectBackgroundColor = useCallback(() => {
     const headerHeight = 116 // header top (16px) + height (100px)
@@ -101,22 +101,22 @@ const isLightColor = (color: string): boolean => {
   return luminance > 0.5
 }
 
-// Dark background colors (current default) - white logo
+// Dark background colors (current default) - black logo for bright theme
 const getDarkBackgroundColors = (): AdaptiveHeaderColors => ({
-  textColor: '#ffffff',
-  backgroundColor: 'rgba(255, 255, 255, 0.015)',
-  borderColor: 'rgba(255, 255, 255, 0.05)',
-  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
+  textColor: '#000000',
+  backgroundColor: 'rgba(255, 255, 255, 0.25)',
+  borderColor: 'rgba(255, 255, 255, 0.18)',
+  boxShadow: '0 8px 32px rgba(22, 29, 111, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(22, 29, 111, 0.05)',
   logoSrc: '/logo_transparent_white.png',
-  logoFilter: 'brightness(0) invert(1)' // Make transparent logo white
+  logoFilter: 'brightness(0) invert(0)' // Make transparent logo black
 })
 
 // Light background colors - black logo
 const getLightBackgroundColors = (): AdaptiveHeaderColors => ({
   textColor: '#000000',
-  backgroundColor: 'rgba(0, 0, 0, 0.025)',
-  borderColor: 'rgba(0, 0, 0, 0.08)',
-  boxShadow: '0 8px 32px rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(0, 0, 0, 0.06)',
+  backgroundColor: 'rgba(255, 255, 255, 0.25)',
+  borderColor: 'rgba(255, 255, 255, 0.18)',
+  boxShadow: '0 8px 32px rgba(22, 29, 111, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(22, 29, 111, 0.05)',
   logoSrc: '/logo_transparent_white.png',
   logoFilter: 'brightness(0) invert(0)' // Make transparent logo black
 })

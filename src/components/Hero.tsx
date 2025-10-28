@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { TypewriterEffect } from './TypewriterEffect'
 import { CloudsAnimation } from './CloudsAnimation'
@@ -8,12 +8,23 @@ export const Hero: React.FC = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const controls = useAnimation()
+  const [showTrusted, setShowTrusted] = useState(false)
 
   useEffect(() => {
     if (isInView) {
       controls.start('visible')
     }
   }, [isInView, controls])
+
+  // Show trusted section after hero text loads
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTrusted(true)
+    }, 4000) // Show after 4 seconds
+
+    return () => clearTimeout(timer)
+  }, [])
+
 
   const itemVariants = {
     hidden: {
@@ -34,41 +45,55 @@ export const Hero: React.FC = () => {
       <div className={styles.background} />
 
 
-      {/* Split Text Layout */}
-      {/* Next Generation - Top Left */}
-      <motion.div
-        className={styles.topLeftText}
-        variants={itemVariants}
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-      >
-        <TypewriterEffect
-          text="Next Generation"
-          className={styles.bigHeadline}
-          speed={120}
-          delay={1000}
-        />
-      </motion.div>
-
-      {/* Clouds Animation - Middle Layer */}
+      {/* Clouds Animation - Behind everything */}
       <CloudsAnimation />
 
-      {/* Core Banking - Bottom Right */}
-      <motion.div
-        className={styles.bottomRightText}
-        variants={itemVariants}
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-      >
-        <TypewriterEffect
-          text="Core Banking"
-          className={styles.bigHeadline}
-          speed={120}
-          delay={2500}
-        />
-      </motion.div>
+      {/* Centered Text Layout */}
+      <div className={styles.container}>
+        <motion.div
+          className={styles.content}
+          variants={itemVariants}
+          initial="hidden"
+          animate={controls}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        >
+          <div className={styles.heroText}>
+            <TypewriterEffect
+              text="Next Generation Bank Operation System"
+              className={styles.centeredHeadline}
+              speed={80}
+              delay={1000}
+            />
+            <div className={styles.subtitle}>
+              Revolutionizing Banks, join the movement
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Trusted By Section */}
+        <motion.div
+          className={styles.trustedSection}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: showTrusted ? 1 : 0,
+            y: showTrusted ? 0 : 20
+          }}
+          transition={{
+            duration: 0.8,
+            ease: [0.4, 0, 0.2, 1]
+          }}
+        >
+          <div className={styles.trustedContent}>
+            <span className={styles.trustedText}>Trusted by</span>
+            <img
+              src="/BankLeumiLogoReupload.png"
+              alt="Bank Leumi"
+              className={styles.bankLogo}
+            />
+          </div>
+        </motion.div>
+      </div>
+
 
       {/* Noise and Vignette Overlays */}
       <div className={styles.noiseOverlay} />

@@ -3,12 +3,11 @@ import styles from './ProductPage.module.css'
 
 export const Core: React.FC = () => {
   return (
-    <div className={styles.productPage}>
+    <div className={`${styles.productPage} ${styles.whiteBackground}`}>
       <div className={styles.container}>
         {/* Hero Section */}
         <section className={styles.productHero}>
           <div className={styles.heroContent}>
-            <span className={styles.productCategory}>Product</span>
             <h1 className={styles.productTitle}>Core</h1>
             <p className={styles.productSubtitle}>Next-Generation Banking Engine</p>
             <p className={styles.productDescription}>

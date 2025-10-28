@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
+  background: #ffffff;
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
@@ -26,7 +26,7 @@
   font-family: var(--font-inter);
   font-size: 16px;
   font-weight: 500;
-  color: var(--accent-teal);
+  color: #4169E1;
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 1rem;
@@ -37,10 +37,10 @@
   font-family: var(--font-inter);
   font-size: 64px;
   font-weight: 800;
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 2rem 0;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, var(--accent-teal) 100%);
+  background: linear-gradient(45deg, #4169E1 0%, #98DED9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,7 +49,7 @@
 .teamDescription {
   font-family: var(--font-inter);
   font-size: 20px;
-  color: var(--text-secondary);
+  color: #000000;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -63,7 +63,7 @@
   transform: translate(-50%, -50%);
   font-size: 200px;
   font-weight: 900;
-  color: rgba(152, 222, 217, 0.03);
+  color: rgba(65, 105, 225, 0.03);
   pointer-events: none;
   z-index: 0;
   user-select: none;
@@ -77,39 +77,21 @@
 }
 
 .teamCard {
-  background: rgba(152, 222, 217, 0.05);
-  border: 1px solid rgba(152, 222, 217, 0.1);
-  border-radius: 20px;
-  padding: 2rem;
   text-align: center;
-  backdrop-filter: blur(20px);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
 .teamCard:hover {
   transform: translateY(-8px);
-  background: rgba(152, 222, 217, 0.08);
-  border-color: rgba(152, 222, 217, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.teamCardCenter {
-  transform: translateY(-1rem);
-}
-
-.teamCardCenter:hover {
-  transform: translateY(-2rem);
-}
 
 .teamCardImage {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 300px;
+  height: 350px;
+  border-radius: 16px;
   overflow: hidden;
-  margin: 0 auto 1.5rem auto;
-  border: 3px solid rgba(152, 222, 217, 0.3);
+  margin: 0 auto 1rem auto;
   position: relative;
 }
 
@@ -117,70 +99,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.teamCard:hover .teamCardImage img {
-  transform: scale(1.1);
 }
 
 .teamCardContent h3 {
   font-family: var(--font-inter);
-  font-size: 24px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0 0 0.5rem 0;
-}
-
-.position {
-  font-family: var(--font-inter);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
-  color: var(--accent-teal);
-  margin: 0 0 1rem 0;
-}
-
-.bio {
-  font-family: var(--font-inter);
-  font-size: 14px;
-  color: var(--text-secondary);
-  display: block;
-  margin-bottom: 1.5rem;
-  font-style: italic;
-}
-
-.socialLinks {
-  list-style: none;
-  padding: 0;
+  color: #000000;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.socialLinks li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: rgba(152, 222, 217, 0.1);
-  border: 1px solid rgba(152, 222, 217, 0.2);
-  border-radius: 50%;
-  color: var(--accent-teal);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.socialLinks li a:hover {
-  background: rgba(152, 222, 217, 0.2);
-  border-color: rgba(152, 222, 217, 0.4);
-  transform: translateY(-2px);
-}
-
-.socialLinks li a i {
-  font-size: 16px;
 }
 
 /* Responsive Design */
@@ -188,24 +114,12 @@
   .teamCards {
     gap: 1.5rem;
   }
-
-  .teamCard {
-    padding: 1.5rem;
-  }
 }
 
 @media (max-width: 768px) {
   .teamCards {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  .teamCardCenter {
-    transform: none;
-  }
-
-  .teamCardCenter:hover {
-    transform: translateY(-8px);
   }
 
   .teamTitle {
@@ -218,6 +132,11 @@
 
   .bgWatermark {
     font-size: 120px;
+  }
+
+  .teamCardImage {
+    width: 250px;
+    height: 300px;
   }
 }
 
@@ -234,13 +153,9 @@
     font-size: 36px;
   }
 
-  .teamCard {
-    padding: 1.5rem;
-  }
-
   .teamCardImage {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 240px;
   }
 
   .bgWatermark {

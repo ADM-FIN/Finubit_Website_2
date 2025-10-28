@@ -15,6 +15,9 @@ export const Footer: React.FC = () => {
             <h1 className={styles.statement}>
               Your bank is probably old
             </h1>
+            <p className={styles.contactEmail}>
+              contact: info@finubit.com
+            </p>
           </div>
         )}
 

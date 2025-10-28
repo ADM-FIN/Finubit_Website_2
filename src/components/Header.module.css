@@ -8,11 +8,13 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 24px;
   backdrop-filter: blur(40px);
-  background: rgba(255, 255, 255, 0.015);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 32px rgba(22, 29, 111, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(22, 29, 111, 0.05);
 }
 
 .header::before {
@@ -23,8 +25,8 @@
   right: 0;
   bottom: 0;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
-  opacity: 0.3;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(22, 29, 111, 0.03) 100%);
+  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -56,7 +58,7 @@
   font-family: var(--font-space);
   font-weight: 600;
   font-size: 28px;
-  color: #ffffff;
+  color: #000000;
   letter-spacing: -0.02em;
 }
 
@@ -64,7 +66,6 @@
   height: 32px;
   width: auto;
   object-fit: contain;
-  transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 .menuButton {
@@ -73,7 +74,7 @@
   gap: 10px;
   background: none;
   border: none;
-  color: #ffffff;
+  color: #000000;
   font-family: var(--font-manrope);
   font-weight: 500;
   font-size: 16px;
@@ -94,7 +95,7 @@
 .menuIcon span {
   width: 16px;
   height: 2px;
-  background: #ffffff;
+  background: #000000;
   transition: all 0.3s ease;
 }
 
@@ -111,11 +112,11 @@
 }
 
 .ctaButton {
-  background: linear-gradient(135deg, #C7FFD8 0%, #98DED9 100%);
-  color: #000000;
+  background: var(--primary-dark);
+  color: var(--accent-green);
   padding: 14px 24px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
   text-decoration: none;
   font-family: var(--font-jakarta);
   font-weight: 600;
@@ -123,20 +124,20 @@
   cursor: none;
   backdrop-filter: blur(10px);
   box-shadow:
-    0 4px 16px rgba(199, 255, 216, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .mobileNav {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(50px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(22, 29, 111, 0.08);
   border-radius: 0 0 24px 24px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  overflow: visible;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px rgba(22, 29, 111, 0.12);
+  overflow: hidden;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navList {
@@ -151,16 +152,16 @@
 }
 
 .navList a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s ease;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: none;
 }
 
 .navList a:hover {
-  color: #98DED9;
-  text-shadow: 0 2px 12px rgba(152, 222, 217, 0.4);
+  color: var(--primary-blue);
+  text-shadow: none;
 }
 
 /* Desktop Navigation */
@@ -180,7 +181,7 @@
   gap: 8px;
   background: none;
   border: none;
-  color: #ffffff;
+  color: #000000;
   font-family: var(--font-manrope);
   font-weight: 500;
   font-size: 16px;
@@ -190,11 +191,11 @@
 }
 
 .productsButton:hover {
-  color: #98DED9;
+  color: var(--primary-blue);
 }
 
 .navLink {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-family: var(--font-manrope);
   font-weight: 500;
@@ -204,24 +205,24 @@
 }
 
 .navLink:hover {
-  color: #98DED9;
+  color: var(--primary-blue);
 }
 
 .desktopProductsDropdown {
   position: absolute;
   top: 100%;
   left: 0;
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 16px 0;
   margin-top: 8px;
   min-width: 200px;
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(152, 222, 217, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 32px rgba(22, 29, 111, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -240,7 +241,7 @@
   right: 0;
   bottom: 0;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
   opacity: 0.3;
   pointer-events: none;
 }
@@ -248,7 +249,7 @@
 .desktopProductsDropdown a {
   display: block;
   padding: 10px 16px;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -261,11 +262,11 @@
 }
 
 .desktopProductsDropdown a:hover {
-  background: rgba(152, 222, 217, 0.1);
-  color: #98DED9;
+  background: rgba(11, 47, 159, 0.08);
+  color: var(--primary-blue);
   box-shadow:
-    0 2px 8px rgba(152, 222, 217, 0.2),
-    inset 0 1px 0 rgba(152, 222, 217, 0.2);
+    0 2px 8px rgba(11, 47, 159, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 /* Show desktop nav on larger screens */
@@ -286,7 +287,7 @@
 }
 
 .productsSectionTitle {
-  color: #98DED9;
+  color: #000000;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 12px;
@@ -298,12 +299,12 @@
   justify-content: center;
   gap: 8px;
   transition: color 0.3s ease;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: none;
 }
 
 .productsSectionTitle:hover {
-  color: #ffffff;
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
+  color: var(--primary-blue);
+  text-shadow: none;
 }
 
 .dropdownArrow {
@@ -320,17 +321,17 @@
   left: 100%;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   padding: 20px 0;
   margin-left: 16px;
   min-width: 220px;
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(152, 222, 217, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    0 8px 32px rgba(22, 29, 111, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -349,7 +350,7 @@
   right: 0;
   bottom: 0;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0%, rgba(255, 255, 255, 0.01) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
   opacity: 0.3;
   pointer-events: none;
 }
@@ -357,7 +358,7 @@
 .productsDropdown a {
   display: block;
   padding: 12px 20px;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -371,18 +372,18 @@
 }
 
 .productsDropdown a:hover {
-  background: rgba(152, 222, 217, 0.1);
-  color: #98DED9;
+  background: rgba(11, 47, 159, 0.08);
+  color: var(--primary-blue);
   box-shadow:
-    0 2px 8px rgba(152, 222, 217, 0.2),
-    inset 0 1px 0 rgba(152, 222, 217, 0.2);
+    0 2px 8px rgba(11, 47, 159, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 /* Desktop enhancements */
 @media (min-width: 1024px) {
   .mobileNav {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 40px rgba(22, 29, 111, 0.15);
   }
 
   .productsDropdown {

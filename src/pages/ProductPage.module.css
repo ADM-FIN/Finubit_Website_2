@@ -226,20 +226,24 @@
   color: #000000;
 }
 
+.whiteBackground .productHero {
+  background: #ffffff;
+}
+
 .whiteBackground .productCategory {
-  color: #007BFF;
+  color: #4169E1;
 }
 
 .whiteBackground .productTitle {
   color: #000000;
-  background: linear-gradient(135deg, #000000 0%, #007BFF 100%);
+  background: linear-gradient(45deg, #4169E1 0%, #98DED9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .whiteBackground .productSubtitle {
-  color: #007BFF;
+  color: #4169E1;
 }
 
 .whiteBackground .productDescription {
@@ -247,7 +251,7 @@
 }
 
 .whiteBackground .section {
-  border-top: 1px solid rgba(0, 123, 255, 0.1);
+  border-top: 1px solid rgba(152, 222, 217, 0.2);
 }
 
 .whiteBackground .section:nth-child(even) {
@@ -257,14 +261,14 @@
 
 .whiteBackground .sectionTitle {
   color: #000000;
-  background: linear-gradient(135deg, #000000 0%, #007BFF 100%);
+  background: linear-gradient(45deg, #4169E1 0%, #98DED9 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .whiteBackground .sectionSubtitle {
-  color: #007BFF;
+  color: #4169E1;
 }
 
 .whiteBackground .sectionText {
@@ -272,14 +276,14 @@
 }
 
 .whiteBackground .featureCard {
-  background: rgba(0, 123, 255, 0.05);
-  border: 1px solid rgba(0, 123, 255, 0.2);
+  background: rgba(152, 222, 217, 0.08);
+  border: 1px solid rgba(152, 222, 217, 0.2);
 }
 
 .whiteBackground .featureCard:hover {
-  background: rgba(0, 123, 255, 0.08);
-  border-color: rgba(0, 123, 255, 0.3);
-  box-shadow: 0 12px 32px rgba(0, 123, 255, 0.1);
+  background: rgba(152, 222, 217, 0.12);
+  border-color: rgba(152, 222, 217, 0.3);
+  box-shadow: 0 12px 32px rgba(152, 222, 217, 0.15);
 }
 
 .whiteBackground .featureCard h4 {
@@ -291,17 +295,17 @@
 }
 
 .whiteBackground .benefitItem {
-  background: rgba(0, 123, 255, 0.05);
-  border: 1px solid rgba(0, 123, 255, 0.1);
+  background: rgba(152, 222, 217, 0.08);
+  border: 1px solid rgba(152, 222, 217, 0.15);
 }
 
 .whiteBackground .benefitItem:hover {
-  background: rgba(0, 123, 255, 0.08);
-  border-color: rgba(0, 123, 255, 0.2);
+  background: rgba(152, 222, 217, 0.12);
+  border-color: rgba(152, 222, 217, 0.25);
 }
 
 .whiteBackground .benefitNumber {
-  color: #007BFF;
+  color: #4169E1;
 }
 
 .whiteBackground .benefitItem h4 {
@@ -326,7 +330,7 @@
 }
 
 .whiteBackground .sectionImage {
-  box-shadow: 0 8px 32px rgba(0, 123, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(152, 222, 217, 0.2);
 }
 
 /* Responsive Design */

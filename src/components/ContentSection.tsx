@@ -10,6 +10,7 @@ interface ContentSectionProps {
   fontFamily?: string
   backgroundColor?: string
   backgroundImage?: string
+  backgroundPosition?: string
   textColor?: string
   rightAnimation?: React.ReactNode
   leftAnimation?: React.ReactNode
@@ -23,6 +24,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
   fontFamily = 'Inter',
   backgroundColor,
   backgroundImage,
+  backgroundPosition = 'center',
   textColor,
   rightAnimation,
   leftAnimation
@@ -50,7 +52,7 @@ export const ContentSection: React.FC<ContentSectionProps> = ({
         backgroundColor: backgroundColor || undefined,
         backgroundImage: backgroundImage ? `url('${backgroundImage}')` : undefined,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: backgroundPosition,
         backgroundRepeat: 'no-repeat',
         position: 'relative'
       }}
